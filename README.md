@@ -63,12 +63,6 @@ All app state lives in one object saved to `localStorage` (`bingo90-v1`):
 
 Every change goes through one `commit()` function in `App.jsx`, which calls the pure `evaluate()` in `lib/engine.js`. `evaluate()` returns the newly claimable wins, and the UI turns those into a banner. Because the engine has no UI or browser dependencies, it is easy to test and reuse.
 
-## Deploy to GitHub Pages
-
-1. Push this repo to GitHub on the `main` branch.
-2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-3. The included workflow runs tests, builds and publishes on every push to `main`. The build uses relative paths (`base: './'`), so it works under any repository name.
-
 ## Contributing
 
 Issues and pull requests are welcome. Run `npm test` and `npm run build` before opening a PR, and add a test in `test/` for any rule or engine change.
