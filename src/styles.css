@@ -1,0 +1,34 @@
+:root{--bg:#fff7fb;--ink:#1d1b2e;--mute:#6b6880;--card:#fff;--pink:#e91e7a;--cyan:#1db7f0;--cell:#fff;--hit:#ffd23f;--hitink:#1d1b2e;--line:#f0d5e4;--win:#16a34a;--bad:#dc2626;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#17141f;--ink:#f4f1fa;--mute:#a49fb8;--card:#221e2e;--cell:#2b2639;--line:#3a3350}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.35}
+main{max-width:1100px;margin:0 auto;padding:12px}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+h1{font-size:1.25rem;margin:0}h2{font-size:1rem;margin:0 0 6px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:12px}
+button{font:inherit;cursor:pointer;color:var(--ink)}button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px;font-size:.85rem}.between{justify-content:space-between;margin-top:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:2px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:.9rem}
+.chip[aria-pressed=true]{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700}.chip.done{text-decoration:line-through;opacity:.7}
+.sm,.tab{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 12px;font-size:.85rem}
+.tab.on,.primary{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700}nav{display:flex;gap:6px}
+.pad{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
+.n{border:1px solid var(--line);background:var(--cell);border-radius:6px;padding:8px 0;font-size:1rem;font-weight:700;min-height:40px}
+.n.called{background:var(--hit);color:var(--hitink);border-color:var(--hit)}.n.last{outline:3px solid var(--pink)}
+.lastcall{display:flex;align-items:center;gap:12px;margin:6px 0}.big{font-size:2.6rem;font-weight:800;color:var(--pink);min-width:3ch;text-align:center}
+.hist,.note{font-size:.85rem;color:var(--mute);overflow-wrap:anywhere}
+.tickets{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.t{border:3px solid var(--pink);border-radius:8px;background:var(--card);padding:8px}.t.won{box-shadow:0 0 0 4px var(--win);border-color:var(--win)}
+.th{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:4px;font-size:.85rem}
+.name{font:inherit;font-weight:700;border:1px solid var(--line);border-radius:6px;padding:4px 6px;background:var(--cell);color:var(--ink);min-width:0;flex:1}
+.g{display:grid;grid-template-columns:repeat(9,1fr);gap:2px;background:var(--cyan);border:2px solid var(--cyan)}
+.c{background:var(--cell);aspect-ratio:1/.85;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:700;min-width:0}
+.c.e{background:color-mix(in srgb,var(--cyan) 22%,var(--cell))}
+.c.m{background:var(--hit);color:var(--hitink);position:relative}.c.m::after{content:"";position:absolute;inset:14%;border:2px solid var(--pink);border-radius:50%}
+input.c{border:0;text-align:center;font:inherit;font-weight:700;color:var(--ink);padding:0;width:100%}input.c.bad{background:color-mix(in srgb,var(--bad) 30%,var(--cell))}
+.near{color:var(--pink);font-weight:700}.wins,.ok{color:var(--win);font-weight:700;font-size:.85rem;margin:6px 0 0}.warn{color:var(--bad);font-size:.85rem;margin:6px 0 0;padding-left:1em}
+.banner{position:fixed;left:8px;right:8px;top:calc(8px + env(safe-area-inset-top,0px));z-index:9;background:var(--win);color:#fff;border-radius:12px;padding:14px;box-shadow:0 8px 30px rgba(0,0,0,.4);animation:pop .35s}
+.banner .msg{font-size:1.4rem;font-weight:800}.banner button{margin-top:8px;background:#fff;border:0;border-radius:8px;padding:8px 16px;font-weight:700}
+@keyframes pop{from{transform:scale(.92);opacity:0}}@media (prefers-reduced-motion:reduce){.banner{animation:none}}
